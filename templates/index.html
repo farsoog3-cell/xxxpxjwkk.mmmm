@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <title>تحويل الصورة إلى تطريز</title>
+</head>
+<body>
+    <h1>رفع الصورة لتحويلها إلى تطريز</h1>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="image" required>
+        <br><br>
+        <button type="submit">تحويل الصورة</button>
+    </form>
+
+    {% if download_link_dst %}
+        <p>تم التحويل بنجاح! <br>
+        <a href="{{ download_link_dst }}">تحميل ملف DST</a> | 
+        <a href="{{ download_link_dse }}">تحميل ملف DSE</a></p>
+    {% endif %}
+</body>
+</html>
